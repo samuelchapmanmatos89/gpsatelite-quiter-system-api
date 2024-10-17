@@ -1,0 +1,13 @@
+listener:
+  port: "8081"
+  timeout: ""
+  
+quiter-api:
+  host: "qis.quiter.com"
+  basepath: "qis/api/customers/v3"
+  enpointCustomers: "customers/1"
+  client_id: "viseo"
+  client_secret: "b3a2b43127d33b3a35a8b270e2bd9ec24a871d22"
+  grant_type: "authorization_code"
+  code: "aa26557819a9d1d8ca5c94122614851d19b7ddda"
+  timeout: "30000"

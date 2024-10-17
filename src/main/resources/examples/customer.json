@@ -1,0 +1,153 @@
+{
+  "customers": [
+    {
+      "id": "string",
+      "category": "string",
+      "title": "string",
+      "name": "string",
+      "fullName": "string",
+      "surname": "string",
+      "surname2": "string",
+      "tradeName": "string",
+      "documentId": "string",
+      "receptionistId": "string",
+      "gender": "H",
+      "profession": "string",
+      "economicActivity": "string",
+      "numberChildren": "string",
+      "nationality": "string",
+      "courtesyCode": "string",
+      "birthdate": "2024-10-16",
+      "maritalStatus": "string",
+      "document": "string",
+      "address": "string",
+      "street": "string",
+      "fiscalAddress": "string",
+      "fiscalAddressNumber": "string",
+      "streetNumber": "string",
+      "floor": "string",
+      "door": "string",
+      "postalCode": "string",
+      "city": "string",
+      "fiscalCity": "string",
+      "country": "string",
+      "email": "string",
+      "emailNotAvailable": "string",
+      "fax": "string",
+      "webSite": "string",
+      "currency": "string",
+      "currencyDefault": "string",
+      "registerDate": "2024-10-16",
+      "registerUser": "string",
+      "cancelled": true,
+      "documentType": "string",
+      "minDate": "2024-10-16",
+      "maxDate": "2024-10-16",
+      "authorizesProcessing": true,
+      "authorizesTransfer": true,
+      "authCommercialCommunications": true,
+      "dataProtection1": true,
+      "dataProtection2": true,
+      "dataProtection3": true,
+      "dataProtection4": true,
+      "dataProtection5": true,
+      "dataProtection6": true,
+      "dataProtection7": true,
+      "phoneNumbers": [
+        {
+          "phoneNumber": "string",
+          "extension": "string",
+          "observations": "string"
+        }
+      ],
+      "mobilePhoneNumber": [
+        {
+          "phoneNumber": "string",
+          "observations": "string"
+        }
+      ],
+      "lastModificationDate": "2024-10-16",
+      "authorizesUse": "string",
+      "authorizesComplianceCont": "string",
+      "authorizesMarketing": "string",
+      "authorizesSurveys": "string",
+      "authorizesProfile": "string",
+      "authorizesOffers": "string",
+      "authorizesOthers": "string",
+      "authorizesDate": "2024-10-16",
+      "state": "string",
+      "borough": "string",
+      "neighborhood": "string",
+      "fiscalStatus": "string",
+      "curp": "string",
+      "addressExtension1": "string",
+      "addressExtension2": "string",
+      "identificationType": "string",
+      "authorityIssuingIdent": "string",
+      "identificationNumber": "string",
+      "profesionalCategory": "string",
+      "legalRepresentativeGrantedDate": "2024-10-16",
+      "publicDeedNumber": "string",
+      "notaryNumber": "string",
+      "notary": "string",
+      "publicDeedNumberCity": "string",
+      "legalRepresentative": "string",
+      "RFCLegalRepresentative": "string",
+      "company": "string",
+      "activityCode": "string",
+      "companyIncorporationDate": "2024-10-16",
+      "companyRegistrationDate": "2024-10-16",
+      "customerRecordNotes": [
+        "string"
+      ],
+      "authorizations": [
+        {
+          "authorizationBrand": "string",
+          "authorizationTransfer": "accept",
+          "authorizationContractCompliance": "accept",
+          "authorizationProfile": "accept",
+          "authorizationOthers": "accept",
+          "authorizationSurveys": "accept",
+          "authorizationOffers": "accept",
+          "authorizationMarketing": "accept",
+          "authorizationDate": "2024-10-16"
+        }
+      ],
+      "vehicleIdOwner": [
+        {
+          "vehicleIdOwner": "string"
+        }
+      ],
+      "vehicleIdCustomer": [
+        {
+          "vehicleIdCustomer": "string"
+        }
+      ],
+      "vehicleIdDriver": [
+        {
+          "vehicleIdDriver": "string"
+        }
+      ],
+      "vehicleIdAccount": [
+        {
+          "vehicleIdAccount": "string"
+        }
+      ],
+      "contacts": [
+        {
+          "name": "string",
+          "telephone": "string",
+          "telephoneTime": "string",
+          "email": "string",
+          "degree": "string",
+          "comments": "string"
+        }
+      ],
+      "relationshipOthersClients": {
+        "codeRelationship": "string",
+        "typeRelationship": "string"
+      },
+      "language": "string"
+    }
+  ]
+}

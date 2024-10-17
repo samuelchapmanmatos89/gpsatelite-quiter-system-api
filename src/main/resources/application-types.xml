@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="customer" format="json">
+      <types:shape format="weave" example="examples/customer.json"><![CDATA[%dw 2.0
+
+type customer = {|
+  customers: Array<{|    id: String,     category: String,     title: String,     name: String,     fullName: String,     surname: String,     surname2: String,     tradeName: String,     documentId: String,     receptionistId: String,     gender: String,     profession: String,     economicActivity: String,     numberChildren: String,     nationality: String,     courtesyCode: String,     birthdate: String,     maritalStatus: String,     document: String,     address: String,     street: String,     fiscalAddress: String,     fiscalAddressNumber: String,     streetNumber: String,     floor: String,     door: String,     postalCode: String,     city: String,     fiscalCity: String,     country: String,     email: String,     emailNotAvailable: String,     fax: String,     webSite: String,     currency: String,     currencyDefault: String,     registerDate: String,     registerUser: String,     cancelled: Boolean,     documentType: String,     minDate: String,     maxDate: String,     authorizesProcessing: Boolean,     authorizesTransfer: Boolean,     authCommercialCommunications: Boolean,     dataProtection1: Boolean,     dataProtection2: Boolean,     dataProtection3: Boolean,     dataProtection4: Boolean,     dataProtection5: Boolean,     dataProtection6: Boolean,     dataProtection7: Boolean,     phoneNumbers: Array<{|      phoneNumber: String,       extension: String,       observations: String    |}>, 
+    mobilePhoneNumber: Array<{|      phoneNumber: String,       observations: String    |}>, 
+    lastModificationDate: String, 
+    authorizesUse: String, 
+    authorizesComplianceCont: String, 
+    authorizesMarketing: String, 
+    authorizesSurveys: String, 
+    authorizesProfile: String, 
+    authorizesOffers: String, 
+    authorizesOthers: String, 
+    authorizesDate: String, 
+    state: String, 
+    borough: String, 
+    neighborhood: String, 
+    fiscalStatus: String, 
+    curp: String, 
+    addressExtension1: String, 
+    addressExtension2: String, 
+    identificationType: String, 
+    authorityIssuingIdent: String, 
+    identificationNumber: String, 
+    profesionalCategory: String, 
+    legalRepresentativeGrantedDate: String, 
+    publicDeedNumber: String, 
+    notaryNumber: String, 
+    notary: String, 
+    publicDeedNumberCity: String, 
+    legalRepresentative: String, 
+    RFCLegalRepresentative: String, 
+    company: String, 
+    activityCode: String, 
+    companyIncorporationDate: String, 
+    companyRegistrationDate: String, 
+    customerRecordNotes: Array<String>, 
+    authorizations: Array<{|      authorizationBrand: String,       authorizationTransfer: String,       authorizationContractCompliance: String,       authorizationProfile: String,       authorizationOthers: String,       authorizationSurveys: String,       authorizationOffers: String,       authorizationMarketing: String,       authorizationDate: String    |}>, 
+    vehicleIdOwner: Array<{| vehicleIdOwner: String |}>, 
+    vehicleIdCustomer: Array<{| vehicleIdCustomer: String |}>, 
+    vehicleIdDriver: Array<{| vehicleIdDriver: String |}>, 
+    vehicleIdAccount: Array<{| vehicleIdAccount: String |}>, 
+    contacts: Array<{|      name: String,       telephone: String,       telephoneTime: String,       email: String,       degree: String,       comments: String    |}>, 
+    relationshipOthersClients: {|
+      codeRelationship: String, 
+      typeRelationship: String
+    |}, 
+    language: String
+  |}>
+|} {"example": "{\\\"customers\\\":[{\\\"id\\\":\\\"string\\\",\\\"category\\\":\\\"string\\\",\\\"title\\\":\\\"string\\\",\\\"name\\\":\\\"string\\\",\\\"fullName\\\":\\\"string\\\",\\\"surname\\\":\\\"string\\\",\\\"surname2\\\":\\\"string\\\",\\\"tradeName\\\":\\\"string\\\",\\\"documentId\\\":\\\"string\\\",\\\"receptionistId\\\":\\\"string\\\",\\\"gender\\\":\\\"H\\\",\\\"profession\\\":\\\"string\\\",\\\"economicActivity\\\":\\\"string\\\",\\\"numberChildren\\\":\\\"string\\\",\\\"nationality\\\":\\\"string\\\",\\\"courtesyCode\\\":\\\"string\\\",\\\"birthdate\\\":\\\"2024-10-16\\\",\\\"maritalStatus\\\":\\\"string\\\",\\\"document\\\":\\\"string\\\",\\\"address\\\":\\\"string\\\",\\\"street\\\":\\\"string\\\",\\\"fiscalAddress\\\":\\\"string\\\",\\\"fiscalAddressNumber\\\":\\\"string\\\",\\\"streetNumber\\\":\\\"string\\\",\\\"floor\\\":\\\"string\\\",\\\"door\\\":\\\"string\\\",\\\"postalCode\\\":\\\"string\\\",\\\"city\\\":\\\"string\\\",\\\"fiscalCity\\\":\\\"string\\\",\\\"country\\\":\\\"string\\\",\\\"email\\\":\\\"string\\\",\\\"emailNotAvailable\\\":\\\"string\\\",\\\"fax\\\":\\\"string\\\",\\\"webSite\\\":\\\"string\\\",\\\"currency\\\":\\\"string\\\",\\\"currencyDefault\\\":\\\"string\\\",\\\"registerDate\\\":\\\"2024-10-16\\\",\\\"registerUser\\\":\\\"string\\\",\\\"cancelled\\\":true,\\\"documentType\\\":\\\"string\\\",\\\"minDate\\\":\\\"2024-10-16\\\",\\\"maxDate\\\":\\\"2024-10-16\\\",\\\"authorizesProcessing\\\":true,\\\"authorizesTransfer\\\":true,\\\"authCommercialCommunications\\\":true,\\\"dataProtection1\\\":true,\\\"dataProtection2\\\":true,\\\"dataProtection3\\\":true,\\\"dataProtection4\\\":true,\\\"dataProtection5\\\":true,\\\"dataProtection6\\\":true,\\\"dataProtection7\\\":true,\\\"phoneNumbers\\\":[{\\\"phoneNumber\\\":\\\"string\\\",\\\"extension\\\":\\\"string\\\",\\\"observations\\\":\\\"string\\\"}],\\\"mobilePhoneNumber\\\":[{\\\"phoneNumber\\\":\\\"string\\\",\\\"observations\\\":\\\"string\\\"}],\\\"lastModificationDate\\\":\\\"2024-10-16\\\",\\\"authorizesUse\\\":\\\"string\\\",\\\"authorizesComplianceCont\\\":\\\"string\\\",\\\"authorizesMarketing\\\":\\\"string\\\",\\\"authorizesSurveys\\\":\\\"string\\\",\\\"authorizesProfile\\\":\\\"string\\\",\\\"authorizesOffers\\\":\\\"string\\\",\\\"authorizesOthers\\\":\\\"string\\\",\\\"authorizesDate\\\":\\\"2024-10-16\\\",\\\"state\\\":\\\"string\\\",\\\"borough\\\":\\\"string\\\",\\\"neighborhood\\\":\\\"string\\\",\\\"fiscalStatus\\\":\\\"string\\\",\\\"curp\\\":\\\"string\\\",\\\"addressExtension1\\\":\\\"string\\\",\\\"addressExtension2\\\":\\\"string\\\",\\\"identificationType\\\":\\\"string\\\",\\\"authorityIssuingIdent\\\":\\\"string\\\",\\\"identificationNumber\\\":\\\"string\\\",\\\"profesionalCategory\\\":\\\"string\\\",\\\"legalRepresentativeGrantedDate\\\":\\\"2024-10-16\\\",\\\"publicDeedNumber\\\":\\\"string\\\",\\\"notaryNumber\\\":\\\"string\\\",\\\"notary\\\":\\\"string\\\",\\\"publicDeedNumberCity\\\":\\\"string\\\",\\\"legalRepresentative\\\":\\\"string\\\",\\\"RFCLegalRepresentative\\\":\\\"string\\\",\\\"company\\\":\\\"string\\\",\\\"activityCode\\\":\\\"string\\\",\\\"companyIncorporationDate\\\":\\\"2024-10-16\\\",\\\"companyRegistrationDate\\\":\\\"2024-10-16\\\",\\\"customerRecordNotes\\\":[\\\"string\\\"],\\\"authorizations\\\":[{\\\"authorizationBrand\\\":\\\"string\\\",\\\"authorizationTransfer\\\":\\\"accept\\\",\\\"authorizationContractCompliance\\\":\\\"accept\\\",\\\"authorizationProfile\\\":\\\"accept\\\",\\\"authorizationOthers\\\":\\\"accept\\\",\\\"authorizationSurveys\\\":\\\"accept\\\",\\\"authorizationOffers\\\":\\\"accept\\\",\\\"authorizationMarketing\\\":\\\"accept\\\",\\\"authorizationDate\\\":\\\"2024-10-16\\\"}],\\\"vehicleIdOwner\\\":[{\\\"vehicleIdOwner\\\":\\\"string\\\"}],\\\"vehicleIdCustomer\\\":[{\\\"vehicleIdCustomer\\\":\\\"string\\\"}],\\\"vehicleIdDriver\\\":[{\\\"vehicleIdDriver\\\":\\\"string\\\"}],\\\"vehicleIdAccount\\\":[{\\\"vehicleIdAccount\\\":\\\"string\\\"}],\\\"contacts\\\":[{\\\"name\\\":\\\"string\\\",\\\"telephone\\\":\\\"string\\\",\\\"telephoneTime\\\":\\\"string\\\",\\\"email\\\":\\\"string\\\",\\\"degree\\\":\\\"string\\\",\\\"comments\\\":\\\"string\\\"}],\\\"relationshipOthersClients\\\":{\\\"codeRelationship\\\":\\\"string\\\",\\\"typeRelationship\\\":\\\"string\\\"},\\\"language\\\":\\\"string\\\"}]}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#d9e89875-409d-4801-aec5-c4db2376516b">
+    <types:processor-declaration>
+      <types:input-event>
+        <types:message>
+          <types:payload type="customer"/>
+        </types:message>
+      </types:input-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>
