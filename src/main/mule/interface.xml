@@ -4,7 +4,7 @@
         <http:listener-connection host="0.0.0.0" port="8081"/>
     </http:listener-config>
     <apikit:config name="gpsatelite-quiter-sapi-config" api="resource::fcd63b23-3d02-45f4-937a-0ccab76ab372:gpsatelite-quiter-sapi:1.0.2:raml:zip:gpsatelite-quiter-sapi.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpsStatus" />
-	<flow name="gpsatelite-quiter-sapi-main" initialState="stopped">
+	<flow name="gpsatelite-quiter-sapi-main" initialState="started">
         <http:listener config-ref="gpsatelite-quiter-sapi-httpListenerConfig" path="/api/*">
             <http:response statusCode="#[vars.httpStatus default 200]">
                 <http:headers>#[vars.outboundHeaders default {}]</http:headers>
@@ -235,13 +235,36 @@ output application/json
         </ee:transform>
     </flow>
     <flow name="get:\customers:gpsatelite-quiter-sapi-config">
-		<http:listener doc:name="Listener" doc:id="cae49c34-5d26-44c7-a051-cd76ec3ad60f" config-ref="gpsatelite-quiter-sapi-httpListenerConfig" path="/customers" allowedMethods="GET"/>
+		<!-- [STUDIO:"Listener"]<http:listener doc:name="Listener" doc:id="cae49c34-5d26-44c7-a051-cd76ec3ad60f" config-ref="gpsatelite-quiter-sapi-httpListenerConfig" path="/customers" allowedMethods="GET"/> [STUDIO] -->
+		<ee:transform doc:name="Transform Message" doc:id="6454acf1-8654-409a-8afe-f803b7c36253" >
+			<ee:message >
+			</ee:message>
+			<ee:variables >
+				<ee:set-variable variableName="lastModificationDateSince" ><![CDATA[attributes.queryParams.lastModificationDateSince as String]]></ee:set-variable>
+				<ee:set-variable variableName="lastModificationDateTo" ><![CDATA[attributes.queryParams.lastModificationDateTo as String ]]></ee:set-variable>
+				<ee:set-variable variableName="Authorization" ><![CDATA[attributes.queryParams.Authorization as String]]></ee:set-variable>
+			</ee:variables>
+		</ee:transform>
 		<http:request method="GET" doc:name="Quiter Internet Services - Customers Management" doc:id="730ee349-7175-4f4d-b284-779e15f22248" config-ref="HTTP_Request_API_Quiter" followRedirects="true" path='${quiter-api.enpointCustomers}'>
 			<http:headers ><![CDATA[#[output application/java
 ---
 {
-	"Authorization" : "Bearer " ++ attributes.queryParams.Authorization as String
+	"Authorization" : "Bearer " ++ vars.Authorization as String,
+	"lastModificationDateSince" : vars.lastModificationDateSince as String,
+	"lastModificationDateTo" : vars.lastModificationDateTo as String
 }]]]></http:headers>
+			<http:uri-params ><![CDATA[#[output application/java
+---
+{
+	"lastModificationDateSince" : vars.lastModificationDateSince as String,
+	"lastModificationDateTo" : vars.lastModificationDateTo as String
+}]]]></http:uri-params>
+			<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"lastModificationDateSince" : vars.lastModificationDateSince as String,
+	"lastModificationDateTo" : vars.lastModificationDateTo as String
+}]]]></http:query-params>
 		</http:request>
 		<ee:transform doc:name="Transform Message" doc:id="de728173-cc72-4170-9cef-af4ecc4e2907">
 			<ee:message>
