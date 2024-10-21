@@ -8,7 +8,7 @@ http://www.mulesoft.org/schema/mule/salesforce http://www.mulesoft.org/schema/mu
 	<global-property doc:name="Global Property" doc:id="6de24053-f4c3-49f0-a7f0-b30aeb46bedd" name="env" value="dev" />
 	<configuration-properties doc:name="Configuration properties" doc:id="1a412c71-bbfd-4d48-ba34-31b58817043e" file="properties/${env}.yaml" />
 	<configuration doc:name="Configuration" doc:id="ec15a610-6439-465b-951a-405a8f8ad491" defaultErrorHandler-ref="global-error-handler" />
-	<http:request-config name="HTTP_Request_API_Quiter" doc:name="HTTP Request configuration" doc:id="961df10e-ce32-4233-af74-8adff2ac1e53" basePath="/${quiter-api.basepath}">
+	<http:request-config name="HTTP_Request_API_Quiter" doc:name="HTTP Request configuration" doc:id="961df10e-ce32-4233-af74-8adff2ac1e53">
 		<http:request-connection host="${quiter-api.host}" connectionIdleTimeout="${quiter-api.timeout}" protocol="HTTPS"/>
 	</http:request-config>
 </mule>
